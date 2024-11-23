@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Results</title>
+</head>
+<body>
+    <h1>Classification Results</h1>
+    <div>
+        {% for result in results %}
+        <div style="margin-bottom: 20px;">
+            <h3>{{ result.filename }}</h3>
+            <img src="data:image/jpeg;base64,{{ result.image_data }}" alt="Uploaded Image" style="max-width: 100%; height: auto;">
+            <p>Predicted Label: <strong>{{ result.predicted_label }}</strong></p>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/">Go Back</a>
+    <form action="/shutdown" method="post" style="margin-top: 20px;">
+        <button type="submit" style="background-color: red; color: white;">Exit Application</button>
+    </form>
+</body>
+</html>

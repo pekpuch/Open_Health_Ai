@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shutting Down</title>
+    <script>
+        // Закрываем вкладку после загрузки страницы
+        window.onload = function() {
+            fetch('/shutdown');  // Отправляем запрос на завершение сервера
+            window.close();      // Закрываем вкладку
+        };
+    </script>
+</head>
+<body>
+    <h1>Shutting Down...</h1>
+</body>
+</html>
